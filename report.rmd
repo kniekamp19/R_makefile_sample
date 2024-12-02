@@ -1,0 +1,27 @@
+---
+title: "report.rmd"
+output: html_document
+date: "2024-12-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Word Length Histogram Report
+
+#### R Automation Pipeline Tutorial
+
+<https://stat545.com/automating-pipeline.html>
+
+```{r read_table}
+counts <- read.delim("histogram.tsv")
+```
+
+```{r most_common}
+most.freq.len <- counts$Length[which.max(counts$Freq)]
+```
+
+The most common English word length is `r most.freq.len`.
+
+![*Fig 1* A histogram of English word lengths](histogram.png)
